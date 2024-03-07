@@ -33,6 +33,7 @@ const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
+  document.title = pathname;
   history.pushState({}, "", pathname);
   const splitPathname = pathname.split("?");
   props = splitPathname[1];

@@ -123,6 +123,5 @@ export const IndividualChat = (element) => {
     }
   })
 
-
   return container;
 };
