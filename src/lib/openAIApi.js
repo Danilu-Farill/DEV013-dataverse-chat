@@ -1,6 +1,3 @@
-/* Esta función debe recibir un parámetro que almacena los mensajes
-deben seguir una estructura específica */
-
 import { getApiKey } from "./apiKey.js";
 
 /* global axios*/
@@ -12,12 +9,10 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
     const response = await axios ({
       method: "POST",
       url: "https://api.openai.com/v1/chat/completions",
-      //En axios el "header" es "headers"
       headers:
       {
         Authorization: "Bearer " + api_key,
       },
-      //En axios el "body" es "data"
       data: {
         messages: [{
           role: "system",
@@ -31,14 +26,10 @@ export const communicateWithOpenAI = async (systemMessages, userMessages) => {
         temperature: 0.7,
       }
     })
-    console.log(response, "función open");
-    return response.data.choices[0].message.content;
-    //return response;
+    return response;
 
   } catch (error) {
     return "error"
-    //El navigateTo debe hacerse dentro de los chats con una condicional, no es responsabilidad del catch usar el navigateTo
-    // navigateTo('/error')
   }
 };
 

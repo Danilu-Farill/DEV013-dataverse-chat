@@ -186,14 +186,6 @@ form {
 .buttonApiDelete:hover {
   background-color: #e9ecef;
 }
-/*.keyApi {/*icono de llave que esta en el home*
-  font-size: 2rem;
-  padding: 8px;
-  position: relative;
-  left: 80%;
-  top: -60px;
-  cursor: url(images/keyIcon.png), auto;
-}*/
 .keyApi {
   cursor: url(images/keyIcon.png), auto !important;
 }
@@ -207,8 +199,8 @@ form {
   cursor: url(images/homeIcon.png), auto;
 }
 .buttonBack:hover {
-    color: rgb(195, 56, 21);
-    font-weight: 400;
+  color: rgb(195, 56, 21);
+  font-weight: 400;
 }
 /*CHAT GRUPAL*/
 [name="close-circle-outline"] {
@@ -216,12 +208,11 @@ form {
   cursor: pointer;
 }
 .bxs-send {
-  transform: translate(5px,-41px);
+  transform: translate(5px, 0);
 }
 .containerGroupal {/*contenedor de los cuadros*/
   overflow: hidden;
   background-color: #d6d1b5;
-  /* margin-top: 5px;*/
   margin-left: 80px;
   margin-bottom: 50px;
   width: 1300px;
@@ -260,7 +251,6 @@ form {
   background-color: #d6d1b5;
   position:relative;
   margin: 0;
-  bottom: 45px;
 }
 .containerGroupal__Users {/*contenedor de participantes*/
   overflow: hidden;
@@ -302,14 +292,7 @@ form {
   width: 90px;
   height: 90px;
 }
-/*.imgChat {
-  position: absolute;
-  top: 60px;
-  width: 80px;
-  height: 80px;
-}*/
 /* Estios del header */
-
 header {
   display: flex; /*PARA DESAPARECER EL TITULO*/
   justify-content: flex-start;
@@ -362,12 +345,8 @@ header nav {
     height: 36px;
   }
   .header-user {
-    /* display: flex; */
-    /* align-items: center; */
     text-align: center;
     gap: 8px;/*ESPACIADO*/
-    /* position: relative;
-    z-index: 1; */
 }
 .header-user-image {
   align-items: center;
@@ -377,9 +356,8 @@ header nav {
   width: 2.5rem;
 }
 .header-user img {
-    width: 3rem;
-  }
-
+  width: 3rem;
+}
   /*HEADER SECUNDARIO*/
 .secundary-header{
   display: flex;
@@ -387,8 +365,7 @@ header nav {
   padding: 20px 10%;
   border-bottom: 1px solid #e0e0e0;
 }
-
-  /* Estilos del body */
+/* Estilos del body */
 body {
   background-color: #f7f3e7;
 }
@@ -428,7 +405,6 @@ aside {
   padding-right: 3em;
 } 
 /*MAIN*/
-
   main {
     display: flex;
     min-height: calc(100vh - 260px);
@@ -460,7 +436,6 @@ aside {
     margin: 0
   }
   /* Este estilo es para el titulo vecinos, el search bar y el select, ES EL CONTENEDOR DE TODOS*/
-
   .buscador {
     display: flex;
     justify-content: space-between;
@@ -468,9 +443,7 @@ aside {
     margin: 1rem 0;
     padding: 1rem;
   }
-
   /*CARDS*/
-
 .card {/*creada desde view*/
   width: 184px;
   height: 279px;
@@ -488,105 +461,21 @@ aside {
 .cardPerezoso {
   background-image: url("./images/cardPerezoso.png");
 }
-/* .cardPerezoso:hover {
-  background: url("./images/hover-cards/card-perezoso.png");
-  position: relative;
-  transform: translateX(0px);
-} */
-/* .cardPerezoso:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .cardDeportista {
   background-image: url("./images/cardDeportista.png");
 }
-/* .cardDeportista:hover {
-  background: url("./images/hover-cards/card-deportista.png");
-  position: relative;
-  transform: translateX(0px);
-}
-.cardDeportista:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .cardAltanera {
   background-image: url("./images/cardAltanera.png");
 }
-/* .cardAltanera:hover {
-  background: url("./images/hover-cards/card-altanera.png");
-  position: relative;
-  transform: translateX(0px);
-}
-.cardAltanera:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .cardDulce {
   background-image: url("./images/cardDulce.png");
 }
-/* .cardDulce:hover {
-  background: url("./images/hover-cards/card-dulce.png");
-  position: relative;
-  transform: translateX(0px);
-}
-.cardDulce:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .cardEsnob {
   background-image: url("./images/cardEsnob.png");
 }
-/* .cardEsnob:hover {
-  background: url("./images/hover-cards/card-esnob.png");
-  position: relative;
-  transform: translateX(0px);
-}
-.cardEsnob:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .cardVivaracha {
   background-image: url("./images/cardVivaracha.png");
 }
-/* .cardVivaracha:hover {
-  background: url("./images/hover-cards/card-vivaracha.png");
-  position: relative;
-  transform: translateX(0px);
-}
-.cardVivaracha:hover::before {
-  content: "Chatea conmigo";
-  text-decoration-line: underline;
-  position: absolute;
-  color: white  ;
-  font-weight: 1000;
-  font-size: 16px;
-  transform: translate(45px, 160px);
-} */
 .bodyCard {/*creada desde view*/
   flex: 1;
   display: flex;
@@ -761,10 +650,6 @@ input[type="text"] {
   /* box-shadow: 0 0 10px rgba(0,0,0,0.8); */
   box-shadow: inset 8px 10px 10px 1px rgba(0,0,0,0.5);
 }
-  /*.btn-clear:hover, .btn-clear:focus,
-  .btn-clear-search:hover,.btn-clear-search:focus {/*hover estilo al pasar el cursor sobre el botón*
-    box-shadow: 0px 7px 10px rgba(black, 0.5);
-  }*/
  /* //Estilos para la vista de estadisticas */
 .stats-main{
   display: flex;
@@ -791,15 +676,12 @@ input[type="text"] {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  /* background-color: rosybrown; */
   width: 100%;
- 
   flex-wrap: wrap;
 }
 .passport-container{
   display: flex;
   gap: 1rem;
-  /* background-color: plum; */
   min-width: 400px;
   max-width: 500px;
   width: 35%;
@@ -866,8 +748,6 @@ height: 2px;
   gap: 1rem;
   padding: 1rem;
   flex: 1;
-  /* border-radius: 12px; */
-  /* position: absolute; */
 }
 .passport-img{
   width: 40%;
@@ -880,11 +760,9 @@ height: 2px;
   justify-content: center;
   margin-top: 16px;
 }
-
 .passport-img img{ /*LA SOMBRA DE LA IMAGEN DENTRO DEL PASAPORTE*/
   filter: drop-shadow(4px -3px 2px rgb(216, 216, 216));
 }
-
 .passport-info{
   width: 60%;
   display: flex;
@@ -905,23 +783,18 @@ height: 2px;
   display: flex;
   align-items: flex-end;
 }
-
 .personal-info-container > div > img{
   width: 26px;
   height: 26px;
   margin-right: 8px;
   margin-top: 4px;
 }
-
 .personal-info-container > div:nth-child(1) > img{
   width: 32px;
   height: 32px;
 }
 /*PASSPORT ZODIAC SIGNS*/
-
-
 .catchphrase-container {
-  /* margin-left: 10px; */
   margin-right: 1rem;
   margin-top: 4px;
   background: #ecedc1;
@@ -936,7 +809,6 @@ height: 2px;
 .chat-container{
   display: flex;
   gap: 1rem;
-  /* background-color: lightcoral; */
   min-width: 400px;
   max-width: 700px;
   width: 45%;
@@ -981,15 +853,6 @@ height: 2px;
   justify-content: flex-end;
   margin-bottom: 50px;
   margin-top: 10px;
-   /*
-  background-color: #FFEEA0;
-    padding-left: 10px;
-    padding-bottom: 0;
-    margin-top: 8px;
-    margin-left: 40px;
-    margin-right: 50%;
-    border-radius: 20px;
-  */
 }
 .user-txt {
   background-color: #FFFBE7;
@@ -1025,21 +888,17 @@ height: 2px;
   margin-bottom: 50px;
   float: unset;
 }
-
 /*ESTILOS PARA LA SCROLLBAR*/
 .chat-body::-webkit-scrollbar {/*scrollbar BARRA DE SCROLL DENTRO DEL CHAT*/
   width: 8px; 
 }
-
 .chat-body::-webkit-scrollbar-thumb {/*LINEA PARA SUBIR Y BAJAR*/
   background-color: #c4b9a9;
   border-radius: 6px;
 }
-
 .chat-body::-webkit-scrollbar-thumb:hover {/*EL HOVER DE LA BARRITA*/
   background-color: #ebddc9;
 }
-
 /*ESTILOS PARA ESCRIBIENDO...*/
 .nameIsWrite div {
   display: flex;
@@ -1047,11 +906,10 @@ height: 2px;
   padding: 0.5rem;
 }
 .nameIsWriteGroupal {
+  display: flex;
   gap: 8px;
   padding: 0.5rem;
-
 }
-
 @keyframes blink { 50% { fill: transparent }}
 .dot { 
   animation: 1s blink infinite;
@@ -1119,27 +977,9 @@ color: #8E8E93;
   font-size: 20px;
   cursor: pointer;
 }
-/*CONTENEDORES CHAT GRUPAL E INDIVIDUAL*/ /*CHECAR QUE NO AFECTO*/
-.user-txt {
-  background-color: #FFFBE7;
-  margin-top: 8px;
-  margin-left: 50%;
-  margin-right: 40px;
-  border-radius: 20px;
-}
-.system-txt {/*padding: 10px 50px 10px 0  arriba, derecha, abajo, izquierda*/
-  background-color: #FFEEA0;
-  padding-left: 10px;/**muevo el texto*/
-  padding-bottom: 0; /*probar auto*/
-  margin-top: 8px;
-  margin-left: 40px;
-  margin-right: 50%;
-  border-radius: 20px;  
-}
 .face {/*contenedor de participantes*/
   width: 40px;
-  height: 40px;
-  
+  height: 40px; 
 }
 .faceFor {
   margin-top: 30px;

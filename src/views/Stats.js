@@ -1,4 +1,3 @@
-//import { Footer } from "../components/Footer.js";
 import { Header } from "../components/Header.js";
 import { computeStats } from "../lib/dataFunctions.js";
 import { Footer } from "../components/Footer.js"

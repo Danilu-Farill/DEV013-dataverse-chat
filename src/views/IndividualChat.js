@@ -1,13 +1,10 @@
 import { Footer } from "../components/Footer.js";
-// import { Header } from "../components/Header.js";
 import { SecondaryHeader } from "../components/SecondaryHeader.js";
 import { navigateTo } from "../router.js";
 import data from "./../data/dataset.js";
 import { communicateWithOpenAI } from "./../lib/openAIApi.js";
-/// /import { filterData } from "../lib/dataFunctions.js";
-//HAY QUE USAR EL ID
+
 export const IndividualChat = (element) => {
-  // const nameElement = filterData(data, "name", ("name").value)
   const idFilter = data.filter((item) => item["id"] === element.id);
   const container = document.createElement("div");
   const main = document.createElement("main");
@@ -87,7 +84,7 @@ export const IndividualChat = (element) => {
   const messageWindows = main.querySelector(".chat-body");
 
   const sendMessageFunction = async () => {
-    nameWrite.classList.remove("hide"); //para esconder el esta escribien
+    nameWrite.classList.remove("hide"); 
     nameWrite.classList.add("show");
     const userInputValue = userInput.value;
 
@@ -98,27 +95,28 @@ export const IndividualChat = (element) => {
     const message = document.createElement("div");
     message.className = "system-txt-container"
     
-    const openAiResponse = await communicateWithOpenAI(
-      idFilter[0].description,
-      userInputValue
-    );
-    if (openAiResponse === "error") {
+    const openAiResponse = await communicateWithOpenAI(idFilter[0].description, userInputValue);
+    
+    if (openAiResponse.data.choices[0].message.content === "error") {
       navigateTo("/error");
     } else {
       message.innerHTML = `
         <img src=${idFilter[0].imageUrlFace} alt=${idFilter[0].name}>
-        <div class="system-txt">${openAiResponse}</div>
+        <div class="system-txt">${openAiResponse.data.choices[0].message.content}</div>
     `
     }
-    //message.innerHTML = openAiResponse.data.choices[0].message.content;
     nameWrite.classList.add("hide");
     nameWrite.classList.remove("show");
-    //Vamos a introducir los mensajes cuando la función communicate retorne
     messageWindows.append(questionUser, message);
     userInput.value = "";
   }
 
-  sendButton.addEventListener("click", sendMessageFunction);
+  sendButton.addEventListener("click", () => {
+    if (userInput.value !== "") {
+      sendMessageFunction();
+    }
+  });
+
   userInput.addEventListener("keyup", (event) => {
     if (event.key === "Enter" && userInput.value !== "") {
       sendMessageFunction();
@@ -128,8 +126,3 @@ export const IndividualChat = (element) => {
 
   return container;
 };
-
-
-
-// <img src="../images/chat-and-passport/bottom-flap.png" alt="bottom-flap">
-// data/choices[0]/message/content

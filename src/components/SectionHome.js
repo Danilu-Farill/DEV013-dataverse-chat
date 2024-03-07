@@ -152,20 +152,12 @@ export const SectionHome = () => {
   const content = section.querySelector("#content");
   content.appendChild(Cards(data));
   const order = section.querySelector('[data-testid="select-sort"]');
-  const options = section.getElementsByTagName("option");
-  //const option =section.querySelector("#sort");
-  const filterGender = aside.querySelector(
-    '[data-testid="select-filterGender"]'
-  );
+  const filterGender = aside.querySelector('[data-testid="select-filterGender"]');
   const filterSpecies = aside.querySelector('[data-testid="select-filter"]');
-  const filterPersonality = aside.querySelector(
-    '[data-testid="select-filterPersonality"]'
-  );
+  const filterPersonality = aside.querySelector('[data-testid="select-filterPersonality"]');
   const buttonClearFilter = aside.querySelector('[data-testid="button-clear"]');
   const inputSearchAnimal = section.querySelector("#searchAnimal");
-  const buttonClearName = section.querySelector(
-    '[data-testid="button-clearName"]'
-  );
+  const buttonClearName = section.querySelector('[data-testid="button-clearName"]');
   const iconChat = buttonDiv.querySelector('[name="logo-wechat"]');
   let filteredData;
   Cards(data);
@@ -182,26 +174,15 @@ export const SectionHome = () => {
 
   order.addEventListener("change", (e) => {
     content.textContent = "";
-    filteredData = sortData(filteredData, "name", e.target.value);//option.options[option.selectedIndex].text
-    console.log("🚀 ~ order.addEventListener ~ filteredData:", options[order.selectedIndex])
+    filteredData = sortData(filteredData, "name", e.target.value);
     content.appendChild(Cards(filteredData));
   });
-
-  // const genderMasculine = document.querySelector("#genderMasculine");
-  // const genderWomen = document.querySelector("#genderWomen");
 
   filterGender.addEventListener("click", (event) => {
     if (!event.target.value) {
       return;
     }
     content.innerHTML = "";
-    /*if (!filterGender.checked) {
-    genderWomen.classList.add("hide");
-    genderMasculine.classList.remove("hide");
-  } else {
-    genderWomen.classList.remove("hide");
-    genderMasculine.classList.add("hide");
-  }*/
     filteredData = filterData(filteredData, "gender", event.target.value);
     content.appendChild(Cards(filteredData));
   });
@@ -252,61 +233,3 @@ export const SectionHome = () => {
   return main;
 };
 
-/*
-
-import { Cards } from "./Cards.js";
-import data from '../data/dataset.js';
-import { sortData } from "../lib/dataFunctions.js"; 
-
-export const SectionHome = () => {
-  const section = document.createElement("section");
-  section.innerHTML = `
-    <div class="container">
-              <div class="buscador">
-                <h2>Lista de vecinos</h2>
-                <div>
-                  <label for="sort">Ordenar por:</label>
-                  <select name="sort" id="sort" data-testid="select-sort">
-                    <option value="all">Elige una opción</option>
-                    <option value="asc">Ordenar de la A-Z</option>
-                    <option value="desc">Ordenar de la Z-A</option>
-                  </select>
-                  <!-- este select esta oculto solo para que pase el test css -->
-                  <label for="sorthidden" hidden>Ordenar por:</label>
-                  <select name="sort" id="sorthidden" hidden></select>
-                  <input type="text" id="searchAnimal" placeholder="Buscar vecino"/>
-                  <button
-                    class="btn-clear-search"
-                    data-testid="button-clearName">
-                    Limpiar
-                  </button>
-                </div>
-              </div>
-              <div id="content"></div>
-              
-                  </div>
-                </div>
-              </div>
-            </div>
-    `;
-    // section.querySelector("#content").append(Cards(data));
-
-    section.querySelector("#content").append(Cards(data));
-    const ordenar = section.querySelector('[data-testid="select-sort"]');
-    //ordenar.addEventListener("change", ()=> {console.log("ordenado")});
-    
-    ordenar.addEventListener("change", (event)=> {
-      section.querySelector("#content").innerHTML=""
-      const sortedData = sortData(data, "name", event.target.value);
-      section.querySelector("#content").append(Cards(sortedData))
-    })
-    return section;
-}
-
-
-// Botón de modal del home eliminado
-/* <div>
-<button class="btn-statics" id="openModal">
-  <ion-icon name="stats-chart-outline"></ion-icon>
-</button>
-</div> */

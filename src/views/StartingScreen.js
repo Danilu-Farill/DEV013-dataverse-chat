@@ -1,4 +1,3 @@
-//pantalla
 import { navigateTo } from '../router.js';
 export const StartingScreen = () => {
   const container = document.createElement("div");
@@ -18,7 +17,6 @@ export const StartingScreen = () => {
       </svg>
   </div>
   `;
-  //container.querySelector(".btn-clear-search").addEventListener("click", () => {console.log("hola")});
   container.querySelector(".btn-start").addEventListener("click", () => navigateTo("/home", { }));
   return container;
 };
